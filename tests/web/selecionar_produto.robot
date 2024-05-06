@@ -14,8 +14,8 @@ Selecionar Sauce Labs Backpack
     E preencho o campo senha    secret_sauce
     E clico no botão Login
     Então sou direcionado para a pagina de produtos
-    Quando clico no produto    Sauce Labs Backpack
-    Então sou direcionado para a pagina do produto    Sauce Labs Backpack    $29.99
+    Quando clico no produto    Sauce Labs Backpack    $29.99
+    Então sou direcionado para a pagina do produto    
     Quando clico em adicionar para o carrinho
     E clico no ícone do carrinho
     Então sou direcionado para o carrinho
@@ -46,15 +46,14 @@ Então sou direcionado para a pagina de produtos
     Element Text Should Be    css=[data-test="title"]    Products
 
 Quando clico no produto
-    [Arguments]    ${product_name}
-    Click Element    css=img[alt="${product_name}"]
-
-Então sou direcionado para a pagina do produto
     [Arguments]    ${product_name}    ${product_price}
-    Element Text Should Be    css=[data-test="inventory-item-name"]    ${product_name}
-    Element Text Should Be    css=[data-test="inventory-item-price"]    ${product_price}
     Set Test Variable    ${test_product_name}    ${product_name}
     Set Test Variable    ${test_product_price}    ${product_price}
+    Click Element    css=img[alt="${test_product_name}"]
+
+Então sou direcionado para a pagina do produto
+    Element Text Should Be    css=[data-test="inventory-item-name"]    ${test_product_name}
+    Element Text Should Be    css=[data-test="inventory-item-price"]    ${test_product_price}
 
 Quando clico em adicionar para o carrinho
     Click Element    css=[data-test="add-to-cart"]
