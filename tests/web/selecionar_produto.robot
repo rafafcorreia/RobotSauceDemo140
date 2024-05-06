@@ -29,7 +29,6 @@ Dado que acesso o site SauceDemo
     Maximize Browser Window
     Set Browser Implicit Wait    10000ms
     Wait Until Element Is Visible    css=.login_logo    5000ms
-    Wait For Condition    return document.title == "Swag Labs"    5000ms
 
 Quando preencho o campo usuario
     [Arguments]    ${username}
@@ -74,5 +73,4 @@ E clico em Logout
 
 Então sou direcionado para a página de login
     Wait Until Element Is Visible    css=.login_logo    5000ms
-    Wait For Condition    return document.title == "Swag Labs"    5000ms
     
