@@ -56,6 +56,7 @@ Então sou direcionado para a pagina do produto
 
 Quando clico em adicionar para o carrinho
     Click Element    css=[data-test="add-to-cart"]
+    Element Text Should Be    css=[data-test="shopping-cart-badge"]    1
 
 E clico no ícone do carrinho
     Click Element    css=[data-test="shopping-cart-link"]
