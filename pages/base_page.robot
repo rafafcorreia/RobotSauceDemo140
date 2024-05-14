@@ -26,7 +26,7 @@ Fechar Navegador
 Tirar Screenshot
     ${date} =    Get Current Date
     ${date} =    Convert Date    ${date}    result_format=%Y.%m.%d_%H.%M.%S
-    Capture Page Screenshot    ${TEST_NAME}/${date}-${TEST_NAME}.png
+    Capture Page Screenshot    ${TEST_NAME}/${date}-${TEST_NAME}.jpg
 
 Clicar no Carrinho
     Click Element    css=[data-test="shopping-cart-link"]
