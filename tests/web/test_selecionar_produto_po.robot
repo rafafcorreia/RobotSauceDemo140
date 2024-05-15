@@ -18,5 +18,5 @@ Selecionar Sauce Labs Backpack
     Element Text Should Be    ${inventory_page_product_name}    Sauce Labs Backpack
     Element Text Should Be    ${inventory_page_product_price}    $29.99
     Realizar Logout
-    Tirar Screenshot de Sucesso
+    Tirar Screenshot de Sucesso    Realizar Logout
     
