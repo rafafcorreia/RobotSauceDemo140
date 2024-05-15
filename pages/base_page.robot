@@ -13,7 +13,7 @@ ${browser}      Chrome
 
 *** Keywords ***
 Abrir Navegador
-    Register Keyword To Run On Failure    Tirar Screenshot
+    Register Keyword To Run On Failure    Tirar Screenshot de Erro
     Open Browser    url=${url}    browser=${browser}
     Maximize Browser Window
     Set Browser Implicit Wait    10000ms
@@ -24,9 +24,17 @@ Fechar Navegador
     Close Browser
 
 Tirar Screenshot
+    [Arguments]    ${dir}
     ${date} =    Get Current Date
     ${date} =    Convert Date    ${date}    result_format=%Y.%m.%d_%H.%M.%S
-    Capture Page Screenshot    ${TEST_NAME}/${date}-${TEST_NAME}.jpg
+    Capture Page Screenshot    ${dir}/${TEST_NAME}/${date}-${TEST_NAME}.jpg
+
+Tirar Screenshot de Sucesso
+    Tirar Screenshot    success
+
+Tirar Screenshot de Erro
+    Tirar Screenshot    error
+
 
 Clicar no Carrinho
     Click Element    css=[data-test="shopping-cart-link"]
