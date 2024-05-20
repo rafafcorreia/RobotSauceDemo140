@@ -23,7 +23,6 @@ Abrir Navegador
     Wait Until Element Is Visible    css=.login_logo    ${timeout}
 
 Fechar Navegador
-    Sleep    3 seconds
     Close Browser
 
 Tirar Screenshot
