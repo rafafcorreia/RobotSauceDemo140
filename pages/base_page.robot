@@ -13,9 +13,6 @@ ${browser}      Chrome
 
 *** Keywords ***
 Abrir Navegador
-    ${date} =    Get Current Date
-    ${date} =    Convert Date    ${date}    result_format=%Y.%m.%d_%H.%M.%S
-    Set Test Variable    ${date}
     Register Keyword To Run On Failure    Tirar Screenshot de Erro
     Open Browser    url=${url}    browser=${browser}
     Maximize Browser Window
@@ -25,9 +22,14 @@ Abrir Navegador
 Fechar Navegador
     Close Browser
 
+Definir Horario
+    ${date} =    Get Current Date
+    ${date} =    Convert Date    ${date}    result_format=%Y.%m.%d_%H.%M.%S
+    Set Global Variable    ${date}
+
 Tirar Screenshot
     [Arguments]    ${dir}    ${sc_name}=${TEST_NAME}
-    Capture Page Screenshot    ${dir}/${TEST_NAME}/${date}/${sc_name}.jpg
+    Capture Page Screenshot    ${dir}/${date}/${TEST_NAME}/${sc_name}.jpg
 
 Tirar Screenshot de Sucesso
     [Arguments]    ${sc_name}
